@@ -1,0 +1,90 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 29, 2018, 12:52:31 PM
+    Author     : Jared Engelkemier
+*/
+
+/* === Global Settings === */
+.background {
+    -fx-background-image: url(schbg4.jpg);
+    -fx-margin: 0;
+    -fx-padding: 0;
+}
+
+.pane {
+    -fx-margin: 0;
+    -fx-padding: 0;
+    -fx-background-image: url(schbg5.jpg);
+    -fx-border-width: 1px;
+    -fx-border-color: #844343;    
+}
+
+.button {
+    -fx-padding: 5 22 5 22;   
+    -fx-border-color: #844343;
+    -fx-border-width: 2px;
+    -fx-background-radius: 0;
+    -fx-background-color: #29382e;
+    -fx-font-family: "Berlin Sans FB", Helvetica, Arial, sans-serif;
+    -fx-font-size: 10pt;
+    -fx-text-fill: #e0cdcd;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+
+.button:hover {
+    -fx-padding: 5 22 5 22;   
+    -fx-border-color: #844343;
+    -fx-border-width: 2px;
+    -fx-background-radius: 0;
+    -fx-background-color: #777777;
+    -fx-font-family: "Berlin Sans FB", Helvetica, Arial, sans-serif;
+    -fx-font-size: 10pt;
+    -fx-text-fill: #1f3155;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+
+.menuButton { 
+    -fx-border-color: #844343;
+    -fx-border-width: 1px;
+    -fx-font-family: "Berlin Sans FB", Helvetica, Arial, sans-serif;
+    -fx-font-size: 10pt;
+}
+
+.label {
+    -fx-font-family: "Calibri", sans-sarif;
+    -fx-font-size: 10pt;
+}
+
+.radioButton {
+    -fx-font-size: 10pt;
+}
+
+.toolBar {
+    -fx-border-color: #844343;
+}
+
+.tableView {
+    -fx-border-color: #844343;
+}
+
+/* === Global Custom Settings === */
+
+.label#mainAppLabel {
+    -fx-font-size: 20pt;
+    -fx-text-fill: sienna;
+    /*-fx-opacity: 0.6;*/
+}
+
+.button#reports {
+    -fx-font-size: 12pt;
+}
+
+.label#titleLabels {
+    -fx-font-size: 14pt;
+    -fx-text-fill: sienna;
+}
+

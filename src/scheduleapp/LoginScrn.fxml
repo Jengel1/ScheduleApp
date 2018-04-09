@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="180.0" prefWidth="280.0" styleClass="background" stylesheets="@styles/styles.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scheduleapp.LoginScrnController">
+   <children>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="383.0" prefWidth="580.0" styleClass="pane" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label id="titleLabels" fx:id="scrnTitleLabel" layoutX="14.0" layoutY="14.0" text="Login Screen" />
+            <GridPane layoutX="13.0" layoutY="39.0" prefHeight="60.0" prefWidth="237.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="usernameLabel" text="Username" />
+                  <Label fx:id="passwordLabel" text="Password" GridPane.rowIndex="1" />
+                  <TextField fx:id="usernameField" promptText="Username" GridPane.columnIndex="1" />
+                  <PasswordField fx:id="passwordField" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <ButtonBar layoutX="-8.0" layoutY="106.0" prefHeight="40.0" prefWidth="260.0">
+              <buttons>
+                <Button fx:id="okBtn" mnemonicParsing="false" onAction="#handleOKbtn" prefHeight="29.0" prefWidth="115.0" text="OK" />
+                  <Button fx:id="exitBtn" mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+              </buttons>
+            </ButtonBar>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

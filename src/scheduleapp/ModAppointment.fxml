@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="626.0" prefWidth="630.0" styleClass="background" stylesheets="@styles/styles.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scheduleapp.ModAppointmentController">
+       <children>
+      <Pane layoutX="60.0" layoutY="51.0" prefHeight="200.0" prefWidth="200.0" styleClass="pane" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label id="titleLabels" layoutX="14.0" layoutY="6.0" text="Modify Appointment" />
+            <ButtonBar layoutX="109.0" layoutY="566.0" prefHeight="40.0" prefWidth="364.0">
+              <buttons>
+                <Button mnemonicParsing="false" onAction="#handleModApptBtn" text="Modify Appointment" />
+                  <Button mnemonicParsing="false" onAction="#handleCnclBtn" text="Cancel" />
+              </buttons>
+            </ButtonBar>
+            <SplitPane dividerPositions="0.7556818181818182" layoutX="24.0" layoutY="36.0" orientation="VERTICAL" prefHeight="530.0" prefWidth="563.0" styleClass="pane">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="123.0" prefWidth="279.0">
+                     <children>
+                        <GridPane layoutX="35.0" layoutY="14.0" prefHeight="150.0" prefWidth="490.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Appt. Id" />
+                              <TextField fx:id="apptIdTextField" editable="false" GridPane.columnIndex="1" />
+                              <Label text="Appt. Title" GridPane.rowIndex="1" />
+                              <TextField fx:id="apptTitleTextField" promptText="Appt. Title" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                              <TextField fx:id="apptLocationTextField" promptText="Appt. Location" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                              <Label text="Appt. Location" GridPane.rowIndex="2" />
+                              <Label text="Appt. Contact" GridPane.rowIndex="3" />
+                              <TextField fx:id="apptContactTextField" promptText="Appt. Contact" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                              <MenuButton mnemonicParsing="false" prefHeight="32.0" prefWidth="122.0" styleClass="menuButton" text="Consultant" GridPane.columnIndex="3">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#handleConsultantMenuItems" text="Bill Roberts" />
+                                  <MenuItem mnemonicParsing="false" onAction="#handleConsultantMenuItems" text="Hallie Washington" />
+                                    <MenuItem mnemonicParsing="false" onAction="#handleConsultantMenuItems" text="Kate Smith" />
+                                </items>
+                              </MenuButton>
+                              <TextField fx:id="apptConsultantTextField" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <TextField fx:id="apptTypeTextField" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                              <MenuButton mnemonicParsing="false" prefHeight="32.0" prefWidth="122.0" styleClass="menuButton" text="Appt. Type" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#handleTypeMenuItems" text="Initial Consultation" />
+                                  <MenuItem mnemonicParsing="false" onAction="#handleTypeMenuItems" text="General Meeting" />
+                                    <MenuItem mnemonicParsing="false" onAction="#handleTypeMenuItems" text="Orientation" />
+                                    <MenuItem mnemonicParsing="false" onAction="#handleTypeMenuItems" text="Networking" />
+                                    <MenuItem mnemonicParsing="false" onAction="#handleTypeMenuItems" text="Closing Agreement" />
+                                </items>
+                              </MenuButton>
+                              <Label text="Appt. Customer" GridPane.rowIndex="4" />
+                              <TextField fx:id="apptCustomerTextField" editable="false" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                            <Button mnemonicParsing="false" onAction="#handleSetCustomerBtn" text="Set Customer" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
+                        <TableView fx:id="customerTable" layoutX="173.0" layoutY="219.0" prefHeight="134.0" prefWidth="217.0" styleClass="tableView">
+                          <columns>
+                            <TableColumn fx:id="customerIdColumn" prefWidth="79.0" text="Customer Id" />
+                            <TableColumn fx:id="customerNameColumn" prefWidth="120.0" resizable="false" text="Customer Name" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <ToolBar layoutX="154.0" layoutY="171.0" prefHeight="41.0" prefWidth="255.0" styleClass="toolBar">
+                          <items>
+                            <Button mnemonicParsing="false" onAction="#handleSrchCustomerBtn" text="Search" />
+                              <TextField fx:id="searchCustomerTextField" />
+                          </items>
+                        </ToolBar>
+                        <Button layoutX="199.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleSeeDetailsBtn" prefHeight="29.0" prefWidth="164.0" text="See Customer Details" textAlignment="CENTER" wrapText="true" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <GridPane layoutX="38.0" layoutY="1.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.0" minWidth="10.0" prefWidth="93.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="10.0" prefWidth="119.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="10.0" prefWidth="61.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="10.0" prefWidth="118.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="58.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label contentDisplay="RIGHT" text="Date" />
+                              <DatePicker fx:id="apptDatePickerField" editable="false" GridPane.columnIndex="1" />
+                              <RadioButton fx:id="startTimeBtn" mnemonicParsing="false" selected="true" styleClass="radioButton" text="Start Time" GridPane.rowIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="apptStartEndRadios" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="endTimeBtn" mnemonicParsing="false" styleClass="radioButton" text="End Time" toggleGroup="$apptStartEndRadios" GridPane.rowIndex="2" />
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="2">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="59.0" minWidth="10.0" prefWidth="51.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="10.0" prefWidth="60.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="apptHrTextField" editable="false" GridPane.rowIndex="1" />
+                                    <MenuButton mnemonicParsing="false" prefHeight="29.0" prefWidth="64.0" styleClass="menuButton" text="Min" GridPane.columnIndex="1">
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#handleMinMenuItems" text="00" />
+                                        <MenuItem mnemonicParsing="false" onAction="#handleMinMenuItems" text="15" />
+                                          <MenuItem mnemonicParsing="false" onAction="#handleMinMenuItems" text="30" />
+                                          <MenuItem mnemonicParsing="false" onAction="#handleMinMenuItems" text="45" />
+                                      </items>
+                                    </MenuButton>
+                                    <MenuButton mnemonicParsing="false" prefHeight="29.0" prefWidth="56.0" styleClass="menuButton" text="Hr">
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#handleHrMenuItmes" text="01" />
+                                        <MenuItem mnemonicParsing="false" onAction="#handleHrMenuItmes" text="02" />
+                                          <MenuItem mnemonicParsing="false" onAction="#handleHrMenuItmes" text="03" />
+                                          <MenuItem mnemonicParsing="false" onAction="#handleHrMenuItmes" text="04" />
+                                          <MenuItem mnemonicParsing="false" onAction="#handleHrMenuItmes" text="05" />
+                                          <MenuItem mnemonicParsing="false" onAction="#handleHrMenuItmes" text="06" />
+                                          <MenuItem mnemonicParsing="false" onAction="#handleHrMenuItmes" text="07" />
+                                          <MenuItem mnemonicParsing="false" onAction="#handleHrMenuItmes" text="08" />
+                                          <MenuItem mnemonicParsing="false" onAction="#handleHrMenuItmes" text="09" />
+                                          <MenuItem mnemonicParsing="false" onAction="#handleHrMenuItmes" text="10" />
+                                          <MenuItem mnemonicParsing="false" onAction="#handleHrMenuItmes" text="11" />
+                                          <MenuItem mnemonicParsing="false" onAction="#handleHrMenuItmes" text="12" />
+                                      </items>
+                                    </MenuButton>
+                                    <TextField fx:id="apptMinTextField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <RadioButton fx:id="amBtn" mnemonicParsing="false" styleClass="radioButton" text="AM" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="apptAmPmRadios" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="pmBtn" mnemonicParsing="false" styleClass="radioButton" text="PM" toggleGroup="$apptAmPmRadios" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Button mnemonicParsing="false" onAction="#handleSetTimeBtn" text="Set Time" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                              <Label text="Appt. End Time" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <TextField fx:id="apptEndTimeTextField" editable="false" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                              <Label text="Appt. Start Time" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                              <TextField fx:id="apptStartTimeTextField" editable="false" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
